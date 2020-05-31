@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>韩旭浩</title>
+    <!--link用来加载外部资源的标签-->
+    <!--相对路径即项目中的路径、绝对路径即完整的路径-->
+    <!--"shortcut icon"特指浏览器中地址栏左侧显示的图标，一般大小为16*16-->
+    <link rel="shortcut icon" href="Photo/icon.png">
+    <!--引入外部样式-->
+    <link rel="stylesheet" href="ExternalStyle.css">
+    <!--<script type="text/javascript" src="CommonClass.js"></script>-->
+
+    <style>
+        .L_second_div {
+            text-align: center;
+        }
+
+        .L_head_img {
+            margin-top: 50px;
+        }
+
+        .L_form_inner_div {
+            width: 90%;
+            margin: 0 auto;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            background: red;
+            margin-top: 30px;
+            height: 100px;
+
+        }
+
+        .L_form_inner_div div span {
+            padding-left: 15px;
+            font-size: 20px;
+            line-height: 50px
+        }
+
+        .L_form_inner_div div {
+            height: 50px;
+            border-bottom: 1px solid #dddddd
+        }
+
+        .L_login_div {
+            height: 50px;
+            background: red;
+            width: 90%;
+            border-radius: 10px;
+            margin: 20px auto;
+            text-align: center;
+            height: 50px;
+            border-bottom: 1px solid #dddddd
+        }
+
+        .L_login_btn {
+            line-height: 50px;
+            height: 50px;
+            color: white;
+            font-size: 20px;
+            width: 100%
+        }
+
+        input {
+            outline: medium;
+            background-color: transparent;
+            border: 0
+        }
+
+        .SDS_header{
+            background: red;
+            height: 50px;
+            border-bottom: 1px solid #dddddd
+        }
+        body{
+            background: red;
+        }
+
+    </style>
+
+</head>
+<body>
+<!--第一部分-->
+<!--语义化标签,来增强代码的可读性-->
+<header class="SDS_header">
+    <span >登录</span>
+</header>
+
+<!--第二部分-->
+
+<div class="L_second_div">
+    <img class="L_head_img" src="Photo/a2.png" alt="">
+</div>
+
+<form action="">
+    <div class="L_form_div">
+        <div class="L_form_inner_div">
+            <div>
+                <span>身份证号:</span>
+                <input id="L_account" type="text" name="account"><br>
+            </div>
+            <div>
+                <span>密码:</span>
+                <input id="L_pwd" type="text" name="password"><br>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="L_login_div">
+            <input class="L_login_btn" type="button" value="登录" id="btn">
+        </div>
+    </div>
+
+</form>
+
+
+
+
+</body>
+</html>

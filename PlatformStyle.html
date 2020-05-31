@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>trying</title>
+    <!--link用来加载外部资源的标签-->
+    <!--相对路径即项目中的路径、绝对路径即完整的路径-->
+    <!--"shortcut icon"特指浏览器中地址栏左侧显示的图标，一般大小为16*16-->
+    <link rel="shortcut icon" href="Photo/icon.png">
+    <!--引入外部样式-->
+    <link rel="stylesheet" href="ExternalStyle.css">
+    <style>
+        article {
+            margin: 20px;
+        }
+
+        h3 {
+            color: red;
+            font-size: 18px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        h4 {
+            font-size: 14px;
+        }
+
+        article p {
+            text-indent: 2em;
+            line-height: 2em;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+<!--第一部分-->
+<!--语义化标签,来增强代码的可读性-->
+<header class="SDS_header">
+    <span>平台风采</span>
+</header>
+
+<!--第二部分-->
+<!--alt供图像无法显示时采用的备用文本-->
+<section class="SDS_second_section">
+    <img src="Photo/banner4.png" alt="无法显示，请检查...">
+</section>
+
+<!--第三部分-->
+<!--h1到h6字体由大到小,是段落-->
+<article>
+    <h3 id="title"></h3>
+    <h4 id="subTitle"></h4>
+    <p id="info"></p>
+    <script>
+        //第一步：创造一个请求对象
+        var xhr=new XMLHttpRequest();
+        //第二步：建立与服务器的连接
+        xhr.open('get','https://mockapi.eolinker.com/2ZhGVxjacb39010e6753bd9c02ee803e6e3bfeab6e8007c/aboutus');
+        //设置头信息，告诉服务器让数据以表单的形式传递出去
+        xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+
+        //第三步：向服务器发送请求
+        xhr.send();
+        //第四步：接受服务器返回的数据
+        xhr.onreadystatechange=function () {
+            if(xhr.readyState==4 && xhr.status==200){
+                var responseData=JSON.parse(xhr.responseText);
+
+                var obj=responseData.data;
+                var h3=document.getElementById("title");
+                var h4=document.getElementById("subTitle");
+                var p=document.getElementById("info");
+                h3.innerHTML=obj.title;
+                h4.innerHTML=obj.subTitle;
+                p.innerHTML=obj.info;
+            }
+        }
+
+    </script>
+
+</article>
+
+<!--第四部分-->
+<footer>
+    <a href="SmallDropService.html">
+        <img src="Photo/nav10.png" alt="">
+        <span >小滴服务</span>
+    </a>
+    <a href="EnterpriseProject.html">
+        <img src="Photo/nav20.png" alt="">
+        <span>企业项目</span>
+    </a>
+    <a href="ServiceProcess.html">
+        <img src="Photo/nav30.png" alt="">
+        <span>服务流程</span>
+    </a>
+    <a href="">
+        <img src="Photo/nav41.png" alt="">
+        <span style="color: red">平台风采</span>
+    </a>
+    <a href="MySmallDrop.html">
+        <img src="Photo/nav50.png" alt="">
+        <span>我的小滴</span>
+    </a>
+</footer>
+</body>
+</html>
